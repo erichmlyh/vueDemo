@@ -8,13 +8,14 @@ import VnodeInTemplate from "./components/VnodeInTemplate";
 import AsyncComponent from "./components/AsyncComponent";
 import ModalRouter from "./components/ModalRouter";
 import SlotOrder from "./components/SlotOrder";
+import HoC from "./components/HoC";
 
 export default {
   name: "App",
   functional: true,
   abstract: true,
   render(h) {
-    return h(SlotOrder);
+    return h(HoC);
   }
 };
 </script>
