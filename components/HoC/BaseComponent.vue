@@ -6,8 +6,8 @@
 <template>
   <div class="base-component">
     <button @click="$emit('click', $event)">props: {{text}}</button>
-    <slot name="namedSlot" childToParent="fromBaseComponent.vue"></slot>
     <slot></slot>
+    <slot name="namedSlot" childToParent="fromBaseComponent.vue"></slot>
   </div>
 </template>
 
