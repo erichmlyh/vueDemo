@@ -10,9 +10,9 @@ export default function WithLifeTime(WrappedComponent) {
       );
     },
     render(h) {
-      // 将 this.$scopedSlots 格式化为数组
-      const children = Object.keys(this.$scopedSlots)
-        .reduce((arr, key) => arr.concat(this.$scopedSlots[key]()), [])
+      /// 将 this.$slots 转化为数组
+      const children = Object.keys(this.$slots)
+        .reduce((arr, key) => arr.concat(this.$slots[key]), [])
         .map(vnode => {
           vnode.context = this._self;
           return vnode;
@@ -23,7 +23,8 @@ export default function WithLifeTime(WrappedComponent) {
         {
           on: this.$listeners,
           attrs: this.$attrs,
-          props: this.$props
+          props: this.$props,
+          scopedSlots: this.$scopedSlots
         },
         children
       );
