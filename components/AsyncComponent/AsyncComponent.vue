@@ -16,23 +16,30 @@ export default {
   name: "AsyncComponent",
   data() {
     return {
-      show: false
+      show: false,
     };
   },
   props: {},
   components: {
-    AsyncInstance: function(resolve) {
-      setTimeout(() => {
-        resolve({
-          render(h) {
-            return h("div", "i'm AsyncInstance");
-          }
-        });
-      }, 1000);
-    }
+    // AsyncInstance: function(resolve) {
+    //   setTimeout(() => {
+    //     resolve({
+    //       render(h) {
+    //         return h("div", "i'm AsyncInstance");
+    //       }
+    //     });
+    //   }, 1000);
+    // },
+    AsyncInstance: function () {
+      return Promise.resolve({
+        render(h) {
+          return h("div", "i'm AsyncInstancex");
+        },
+      });
+    },
   },
   mounted() {},
-  methods: {}
+  methods: {},
 };
 </script>
 

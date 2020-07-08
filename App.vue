@@ -9,13 +9,19 @@ import AsyncComponent from "./components/AsyncComponent";
 import ModalRouter from "./components/ModalRouter";
 import SlotOrder from "./components/SlotOrder";
 import HoC from "./components/HoC";
+import TestOn from "./components/TestOn";
+import DepTime from "./components/DepTime";
+import IviewTabs from "./components/IviewTabs";
+import RxjsDemo from "./components/RxjsDemo";
+import VuexDemo from "./components/VuexDemo";
+import Direction from "./components/Direction";
 
 export default {
   name: "App",
   functional: true,
   abstract: true,
   render(h) {
-    return h(HoC);
+    return h(Direction);
   }
 };
 </script>
